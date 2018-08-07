@@ -14,11 +14,13 @@ import com.example.dizzer.themoviedb.model.Movie;
 import com.example.dizzer.themoviedb.util.MovieUtil;
 import com.squareup.picasso.Picasso;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.internal.Util;
 
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.ViewHolder> {
 
@@ -53,7 +55,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
                 .load(MovieUtil.constructURL(movies.get(position)))
                 .into(holder.ivMoviePoster);
         holder.tvMovieTitle.setText(movies.get(position).getTitle());
-        holder.tvRateInfo.setText(context.getString(R.string.movie_votes, voteAverage, voteCount));
+        holder.tvRateInfo.setText(context.getString(R.string.movie_votes, String.valueOf(voteAverage), voteCount));
     }
 
     @Override

@@ -12,4 +12,6 @@ public interface MainView {
     void showEmpty();
 
     void showNoConnectionInfo();
+
+    void hideNoConnectionInfo();
 }

@@ -4,5 +4,5 @@
     <string name="connections_text_info">Oops! Check your internet connections, and retry.</string>
     <string name="movie_image_desc">movieImage</string>
 
-    <string name="movie_votes">%1$f/10 (%2$d votes)</string>
+    <string name="movie_votes">%1$s/10 (%2$d votes)</string>
 </resources>

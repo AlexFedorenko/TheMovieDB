@@ -6,14 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_weight="1"
-    android:background="@color/colorPrimaryDark"
-    android:layout_margin="@dimen/common_margin_8_dp">
+    android:layout_marginStart="@dimen/common_margin_8_dp"
+    android:layout_marginEnd="@dimen/common_margin_8_dp"    >
 
     <ImageView
         android:id="@+id/ivMoviePoster"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/common_margin_8_dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,6 +26,7 @@
         android:layout_marginStart="@dimen/common_margin_8_dp"
         android:text="Title"
         android:maxLines="1"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivMoviePoster" />
@@ -39,6 +39,7 @@
         android:layout_marginBottom="8dp"
         android:text="@string/movie_votes"
         android:maxLines="1"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
