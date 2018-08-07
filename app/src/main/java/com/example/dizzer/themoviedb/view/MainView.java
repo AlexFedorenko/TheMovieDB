@@ -1,6 +1,6 @@
 package com.example.dizzer.themoviedb.view;
 
-import android.graphics.Movie;
+import com.example.dizzer.themoviedb.model.Movie;
 
 import java.util.List;
 
