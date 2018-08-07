@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.example.dizzer.themoviedb.R;
 import com.example.dizzer.themoviedb.model.Movie;
@@ -19,12 +20,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity implements MainView{
+public class MainActivity extends AppCompatActivity implements MainView {
 
     @BindView(R.id.rvMovies)
     RecyclerView rvMovies;
     @BindView(R.id.offlineContainer)
     ConstraintLayout offlineContainer;
+    @BindView(R.id.progressBar)
+    ProgressBar progressBar;
     private MovieListAdapter adapter;
     private MainPresenter presenter;
 
@@ -61,12 +64,12 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
     @Override
     public void showMovieList(List<Movie> movies) {
-        adapter.sedData(movies);
+        adapter.setData(movies);
     }
 
     @Override
     public void showLoading() {
-
+        progressBar.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -76,16 +79,18 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
     @Override
     public void showNoConnectionInfo() {
+        progressBar.setVisibility(View.GONE);
         offlineContainer.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideNoConnectionInfo() {
+        progressBar.setVisibility(View.GONE);
         offlineContainer.setVisibility(View.GONE);
     }
 
     @OnClick(R.id.btnRetry)
-    public void retryClick(){
+    public void retryClick() {
         presenter.retryLoadData();
     }
 }
